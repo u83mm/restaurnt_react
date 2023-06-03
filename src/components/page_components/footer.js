@@ -3,8 +3,8 @@ import React from "react";
 class Footer extends React.Component {
     render() {
         return(
-            <footer>
-                <p>Aquí va el footer</p>
+            <footer className="container-fluid d-flex justify-content-center align-items-center">
+                <p>Copyrigth reserved 2023</p>
             </footer>
         );
     }
