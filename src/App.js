@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Header from './components/page_components/header';
+import Main from './components/page_components/main';
+import Footer from "./components/page_components/footer";
 
 function App() {
+  const nav_links = {
+      "Home"		    :	"/",
+      "Menu"		    : "/menu/menu.js",
+      "Registration": "/register.js",				
+      "Login"		    : "/login.js",
+  } 
+
+  const links = Object.entries(nav_links).map(([label, link]) => (  
+      <li className="nav-item d-lg-inline-block" key={label}><a className="nav-link" href={ link }>{ label }</a></li>
+  )); 
+   
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Main links = { links } />      
+      <Footer />
     </div>
   );
 }
